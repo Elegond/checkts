@@ -1,0 +1,11 @@
+services:
+  TSNOTIFY:
+    build:
+      context: .
+      dockerfile: DOCKERFILE
+    image: tsnotify:latest
+    container_name: TSNOTIFY
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file: .env
+    restart: unless-stopped
